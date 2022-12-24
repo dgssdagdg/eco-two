@@ -411,14 +411,6 @@ body {
   text-align: center;
 }
 
-.about-play {
-  position: absolute;
-  top: 0;
-  left: 0;
-  top: 25.6756756757%;
-  left: 36.8421052632%;
-}
-
 .about-title {
   margin-bottom: 40px;
   text-align: center;
@@ -448,10 +440,6 @@ body {
   .about-img img:nth-of-type(1) {
     max-width: 480px;
   }
-  .about-img .about-play {
-    top: 16.2162162162%;
-    left: 33.3333333333%;
-  }
 }
 @media (max-width: 992px) {
   .about {
@@ -466,11 +454,6 @@ body {
     text-align: center;
     width: 100%;
   }
-  .about-img .about-play {
-    top: 26.2162162162%;
-    left: 41.3333333333%;
-    max-width: 140px;
-  }
 }
 @media (max-width: 767px) {
   .about-title {
@@ -484,17 +467,6 @@ body {
   }
   .about-img img:nth-of-type(1) {
     max-width: 100%;
-  }
-  .about-img .about-play {
-    max-width: 100px;
-    top: 27.2162162162%;
-    left: 37.3333333333%;
-  }
-}
-@media (max-width: 374px) {
-  .about-img .about-play {
-    max-width: 90px;
-    left: 34.3333333333%;
   }
 }
 .advantages {
@@ -720,19 +692,37 @@ body {
   height: 100%;
   margin-bottom: 40px;
 }
-
-.swiper-slide .gallery-img img {
-  width: 570px;
+.gallery-sliders .swiper-slide {
+  position: relative;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.gallery-sliders .swiper-slide .gallery-img img {
+  width: 100%;
+  max-height: 100%;
+}
+.gallery-sliders .swiper-slide::before {
+  content: "";
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  position: absolute;
+  width: 100%;
   height: 100%;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.418);
+}
+.gallery-sliders .swiper-slide-active {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.gallery-sliders .swiper-slide-active::before {
+  display: none;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .gallery-img {
   height: 100%;
-}
-
-.swiper-slide-active .gallery-img img {
-  width: 100%;
-  max-height: 100%;
 }
 
 .swiper-slide-prev {
@@ -815,6 +805,7 @@ body {
       -ms-flex-align: start;
           align-items: flex-start;
   row-gap: 15px;
+  padding-right: 50px;
 }
 .certificate .advantages-block {
   position: relative;

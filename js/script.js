@@ -4,6 +4,7 @@ const swiper = new Swiper('.gallery-sliders', {
       el: '.swiper-pagination',
       type: 'fraction',
     },
+    speed: 800,
     spaceBetween: 60,
     navigation: {
       nextEl: '.gallery-button-next',
@@ -13,6 +14,7 @@ const swiper = new Swiper('.gallery-sliders', {
 
 const swiperTwo = new Swiper('.sliders', {
     loop: true,
+    speed: 800,
     pagination: {
       el: '.sliders-pagination',
     },
